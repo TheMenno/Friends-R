@@ -35,21 +35,17 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         // Save rating for each friend using SharedPreferences
-        // Get the stored rating
         prefs = getSharedPreferences("settings", MODE_PRIVATE);
         RatingBar ratingBar = findViewById(R.id.profileRatingBar);
+
+        // Get the stored rating
         Float retrievedFloat = prefs.getFloat(retrievedFriend.getName(), 0);
 
-        // Show rating if available
-        if (retrievedFloat != null) {
-            // Set the correct value in de data
-            retrievedFriend.setRating(retrievedFloat);
+        // Set the correct value in de data
+        retrievedFriend.setRating(retrievedFloat);
 
-            // Set the correct value on the ratingbar
-            ratingBar.setRating(retrievedFloat);
-        } else {
-            ratingBar.setRating(0);
-        }
+        // Set the correct value on the ratingbar
+        ratingBar.setRating(retrievedFloat);
 
         // Initialise the listener for the rating bar
         RatingBarListener(ratingBar);

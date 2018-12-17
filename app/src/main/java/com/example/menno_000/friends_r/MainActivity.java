@@ -46,22 +46,28 @@ public class MainActivity extends AppCompatActivity {
         Friend barney = new Friend ("Barney", "A guy trying to bed all women of New York"
                 , getResources().getIdentifier("barney_stinson", "drawable",
                 MainActivity.this.getPackageName()));
-        Friend marshall = new Friend ("Marshall", "A guy studying law",
+        Friend marshall = new Friend ("Marshall", "A nice guy studying law",
                 getResources().getIdentifier("marshall_eriksen", "drawable",
                         MainActivity.this.getPackageName()));
         Friend lily = new Friend ("Lily", "A girl trying to figure out what job fits her"
                 , getResources().getIdentifier("lily_aldrin", "drawable",
                 MainActivity.this.getPackageName()));
+        Friend stella = new Friend ("Stella", "A single mother looking for a husband"
+                , getResources().getIdentifier("stella_zinman", "drawable",
+                MainActivity.this.getPackageName()));
+        Friend victoria = new Friend ("Victoria", "A cool girl living day by day"
+                , getResources().getIdentifier("victoria", "drawable",
+                MainActivity.this.getPackageName()));
+        Friend james = new Friend ("James", "A stylish gay guy and Barney's brother"
+                , getResources().getIdentifier("james_stinson", "drawable",
+                MainActivity.this.getPackageName()));
 
         // Add the friends to the list
-        Collections.addAll(friends, ted, robin, barney, marshall, lily);
+        Collections.addAll(friends, ted, robin, barney, marshall, lily, stella, victoria, james);
 
-        // Set a listener on the grid
-        GridView gv = findViewById(R.id.grid);
-        gv.setOnItemClickListener(new GridItemClickListener());
-
-        // Set adapter on the grid
-        GridView grid = findViewById(R.id.grid);
-        grid.setAdapter(adapter);
+        // Set a listener and adapter on the grid
+        GridView gridview = findViewById(R.id.grid);
+        gridview.setOnItemClickListener(new GridItemClickListener());
+        gridview.setAdapter(adapter);
     }
 }
